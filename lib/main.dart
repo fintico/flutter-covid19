@@ -166,7 +166,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: Row(
                     children: <Widget>[
-                      Counter(),
+                      Counter(
+                        title: "Infected",
+                        color: kInfectedColor,
+                        number: 20000,
+                      ),
                     ],
                   ),
                 ),
@@ -180,8 +184,15 @@ class HomeScreen extends StatelessWidget {
 }
 
 class Counter extends StatelessWidget {
+  final int number;
+  final Color color;
+  final String title;
+
   const Counter({
     Key key,
+    this.number,
+    this.color,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -194,14 +205,14 @@ class Counter extends StatelessWidget {
           width: 25,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: kInfectedColor.withOpacity(0.26),
+            color: color.withOpacity(0.26),
           ),
           child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.transparent,
               border: Border.all(
-                color: kInfectedColor,
+                color: color,
                 width: 2,
               ),
             ),
@@ -211,14 +222,14 @@ class Counter extends StatelessWidget {
           height: 10,
         ),
         Text(
-          "1045",
+          "$number",
           style: TextStyle(
             fontSize: 40,
-            color: kInfectedColor,
+            color: color,
           ),
         ),
         Text(
-          "Infected",
+          "$title",
           style: kSubTextStyle,
         ),
       ],
