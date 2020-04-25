@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/constant.dart';
+import 'package:flutter_covid_app/widgets/counter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() => runApp(MyApp());
@@ -52,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                     children: <Widget>[
                       Align(
                         alignment: Alignment.topRight,
-                        child: SvgPicture.asset("assets/icons/menu.svg"),
+                        child: Image.asset("assets/icons/menu.svg"),
                       ),
                       SizedBox(
                         height: 20,
@@ -236,60 +237,6 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class Counter extends StatelessWidget {
-  final int number;
-  final Color color;
-  final String title;
-
-  const Counter({
-    Key key,
-    this.number,
-    this.color,
-    this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.all(6),
-          height: 25,
-          width: 25,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: color.withOpacity(0.26),
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.transparent,
-              border: Border.all(
-                color: color,
-                width: 2,
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Text(
-          "$number",
-          style: TextStyle(
-            fontSize: 40,
-            color: color,
-          ),
-        ),
-        Text(
-          "$title",
-          style: kSubTextStyle,
-        ),
-      ],
     );
   }
 }
