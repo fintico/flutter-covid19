@@ -71,7 +71,26 @@ class HomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Expanded(
-                    child: Stack(),
+                    child: Stack(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          "assets/icons/Drcorona.svg",
+                          width: 230,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topCenter,
+                        ),
+                        Positioned(
+                          top: 20,
+                          left: 150,
+                          child: Text(
+                            "Solo Quedate \nen casa HDP.",
+                            style:
+                                kHeadingTextStyle.copyWith(color: Colors.white),
+                          ),
+                        ),
+                        Container(), // aca le tuvimos que poner un container xq si no se ocultaba el texto a la mitad
+                      ],
+                    ),
                   )
                 ],
               ),
