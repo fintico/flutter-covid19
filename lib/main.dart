@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/constant.dart';
+import 'package:flutter_covid_app/info_screen.dart';
 import 'package:flutter_covid_app/widgets/clipper.dart';
 import 'package:flutter_covid_app/widgets/counter.dart';
 import 'package:flutter_covid_app/widgets/header.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: kBackgroundColor,
           fontFamily: 'Poppins',
           textTheme: TextTheme(bodyText1: TextStyle(color: kBodyTextColor))),
-      home: HomeScreen(),
+      home: InfoScreen(),
     );
   }
 }
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          AppHeader(),
+          AppHeader(image: "assets/icons/Drcorona.svg", textTop: "Quedate", textBottom: "en casa!!",),
           Container(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             margin: EdgeInsets.symmetric(horizontal: 20),

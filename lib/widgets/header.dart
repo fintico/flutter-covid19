@@ -4,8 +4,15 @@ import 'package:flutter_covid_app/widgets/clipper.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppHeader extends StatelessWidget {
+  final String image;
+  final String textTop;
+  final String textBottom;
+
   const AppHeader({
     Key key,
+    this.image,
+    this.textTop,
+    this.textBottom,
   }) : super(key: key);
 
   @override
@@ -42,7 +49,7 @@ class AppHeader extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   SvgPicture.asset(
-                    "assets/icons/Drcorona.svg",
+                    image,
                     width: 230,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.topCenter,
@@ -51,7 +58,7 @@ class AppHeader extends StatelessWidget {
                     top: 20,
                     left: 150,
                     child: Text(
-                      "Solo Quedate \nen casa HDP.",
+                      "$textTop \n$textBottom.",
                       style: kHeadingTextStyle.copyWith(color: Colors.white),
                     ),
                   ),
