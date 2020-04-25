@@ -20,8 +20,8 @@ class AppHeader extends StatelessWidget {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        padding: EdgeInsets.only(left: 40, top: 50, right: 20),
-        height: 350,
+        padding: EdgeInsets.only(left: 40, top: 20, right: 20),
+        height: 300,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
