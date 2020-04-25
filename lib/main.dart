@@ -165,15 +165,27 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Counter(
                         title: "Infected",
                         color: kInfectedColor,
-                        number: 20000,
+                        number: 200,
+                      ),
+                      Counter(
+                        title: "Deaths",
+                        color: kDeathColor,
+                        number: 450,
+                      ),
+                      Counter(
+                        title: "Recovered",
+                        color: kRecovercolor,
+                        number: 10,
                       ),
                     ],
                   ),
                 ),
+
               ],
             ),
           ),
