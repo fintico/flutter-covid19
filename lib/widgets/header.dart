@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/constant.dart';
+import 'package:flutter_covid_app/info_screen.dart';
 import 'package:flutter_covid_app/widgets/clipper.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -38,9 +39,19 @@ class AppHeader extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
             Align(
               alignment: Alignment.topRight,
-              child: Image.asset("assets/icons/menu.svg"),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return InfoScreen();
+                  },),);
+                },
+                child: SvgPicture.asset("assets/icons/menu.svg"),
+              ),
             ),
             SizedBox(
               height: 20,
