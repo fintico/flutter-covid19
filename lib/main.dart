@@ -72,12 +72,53 @@ class HomeScreen extends StatelessWidget {
                                 kHeadingTextStyle.copyWith(color: Colors.white),
                           ),
                         ),
-                        Container(), // aca le tuvimos que poner un container xq si no se ocultaba el texto a la mitad
+                        Container(),
+                        // aca le tuvimos que poner un container xq si no se ocultaba el texto a la mitad
                       ],
                     ),
                   )
                 ],
               ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            height: 60,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(color: Color(0xFFE5E5E5)),
+            ),
+            child: Row(
+              children: <Widget>[
+                SvgPicture.asset("assets/icons/maps-and-flags.svg"),
+                SizedBox(
+                  width: 20,
+                ),
+                Expanded(
+                  child: DropdownButton(
+                    isExpanded: true,
+                    underline: SizedBox(),
+                    value: "Indonesia",
+                    icon: SvgPicture.asset("assets/icons/dropdown.svg"),
+                    items: [
+                      'Indonesia',
+                      'Bangladesh',
+                      'United Sates',
+                      'Japan',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      print(value);
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (value) {},
+                  ),
+                ),
+              ],
             ),
           ),
         ],
