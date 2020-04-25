@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app/constant.dart';
+import 'package:flutter_covid_app/widgets/clipper.dart';
 import 'package:flutter_covid_app/widgets/counter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -241,20 +242,3 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class MyClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height - 80);
-    path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 80);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
-  }
-}
