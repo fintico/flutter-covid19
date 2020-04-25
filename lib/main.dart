@@ -132,7 +132,8 @@ class HomeScreen extends StatelessWidget {
                   children: <Widget>[
                     RichText(
                       text: TextSpan(children: [
-                        TextSpan(text: 'Case Update \n', style: kTitleTextstyle),
+                        TextSpan(
+                            text: 'Case Update \n', style: kTitleTextstyle),
                         TextSpan(
                           text: 'Newest update today at this time',
                           style: TextStyle(color: kTextLightColor),
@@ -147,7 +148,23 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 4),
+                        blurRadius: 30,
+                        color: kShadowColor,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
