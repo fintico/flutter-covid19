@@ -67,112 +67,14 @@ class HomeScreen extends StatelessWidget {
                     }).toList(),
                     onChanged: (value) {},
                   ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    RichText(
-                      text: TextSpan(children: [
-                        TextSpan(
-                            text: 'Case Update \n', style: kTitleTextstyle),
-                        TextSpan(
-                          text: 'Newest update today at this time',
-                          style: TextStyle(color: kTextLightColor),
-                        ),
-                      ]),
-                    ),
-                    Spacer(),
-                    Text(
-                      "See details",
-                      style: TextStyle(
-                          color: kPrimaryColor, fontWeight: FontWeight.w600),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 4),
-                        blurRadius: 30,
-                        color: kShadowColor,
-                      ),
-                    ],
+                  SizedBox(
+                    height: 20,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Counter(
-                        title: "Infected",
-                        color: kInfectedColor,
-                        number: 200,
-                      ),
-                      Counter(
-                        title: "Deaths",
-                        color: kDeathColor,
-                        number: 450,
-                      ),
-                      Counter(
-                        title: "Recovered",
-                        color: kRecovercolor,
-                        number: 10,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      "Spread of Virus",
-                      style: kTitleTextstyle,
-                    ),
-                    Text(
-                      "See details",
-                      style: TextStyle(
-                        color: kPrimaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    )
-                  ],
-                ),
-                Container(
-                  child: Image.asset(
-                    'assets/icons/map.svg',
-                  ),
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.transparent,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 10),
-                        blurRadius: 30,
-                        color: kShadowColor,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                  Expanded(
+                    child: Stack(),
+                  )
+                ],
+              ),
             ),
           ),
         ],
